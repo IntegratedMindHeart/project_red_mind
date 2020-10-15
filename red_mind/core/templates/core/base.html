@@ -7,21 +7,22 @@
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <title>{% block title %}Red Mind Heart{% endblock title %}</title>
 </head>
 <body>
-    <div class="container-fluid">
-        {% include 'core/navbar.html' %}
-    </div>
+    
+    {% include 'core/navbar.html' %}
 
     {% block content %} {% endblock content %}
     
-    <div class="container-fluid">
-        {% include 'core/footer.html' %}
-    </div>    
+    {% include 'core/footer.html' %}
+    
     <script src="{% static 'core/js/jquery.js' %}"></script>
     <script src="{% static 'core/js/popper.js' %}"></script>
     <script src="{% static 'core/js/bootstrap.js' %}"></script>
     <script src="{% static 'core/js/all.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/375d7aa2be.js" crossorigin="anonymous"></script>
 </body>
 </html>
