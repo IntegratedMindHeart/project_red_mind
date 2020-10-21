@@ -46,8 +46,9 @@
   /* Other styles for the page not related to the animated dropdown */
   
   body {
-    /* background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF); */
+    background: black;
+    background: linear-gradient(to right, #000000, #000000);
+    
   }
   .navbar-nav a{
     font-family: poppins;
