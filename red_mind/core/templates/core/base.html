@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="{% static 'core/images/logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://fonts.googleapis.com/css?family=Arapey:400,400i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <title>{% block title %}Project Red Mind{% endblock title %}</title>
+    <script src="https://kit.fontawesome.com/375d7aa2be.js" crossorigin="anonymous"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 </head>
 <body>
-    
-    {% include 'core/navbar.html' %}
+    <div id="site-content">
+        {% include 'core/navbar.html' %}
 
-    {% block content %} {% endblock content %}
-    
-    {% include 'core/footer.html' %}
-    
+        {% block content %} {% endblock content %}
+
+        {% include 'core/footer.html' %}
+    </div>
     <script src="{% static 'core/js/jquery.js' %}"></script>
     <script src="{% static 'core/js/popper.js' %}"></script>
     <script src="{% static 'core/js/bootstrap.js' %}"></script>
     <script src="{% static 'core/js/all.min.js' %}"></script>
+    <script src="{% static 'core/js/plugins.js' %}"></script>
+    <script src="{% static 'core/js/app.js' %}"></script>
     <script src="https://kit.fontawesome.com/375d7aa2be.js" crossorigin="anonymous"></script>
+   
+    
+    <!-- Default snippet for navigation -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </body>
+
 </html>
