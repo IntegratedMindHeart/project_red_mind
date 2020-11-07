@@ -1513,7 +1513,7 @@ ul.arrow {
         color: #ffaa3c; }
 
 .main-content .container {
-  background: white;
+  background: #000000b0;
   border-radius: 5px;
   padding: 30px; }
 
@@ -1606,32 +1606,34 @@ ul.arrow {
       .movie-list .movie {
         width: 100%;
         clear: both; } }
-    .movie-list .movie .movie-poster {
+     .movie .movie-poster {
       border-radius: 5px;
       overflow: hidden;
       margin-bottom: 20px;
       border: 1px solid transparent; }
-      .movie-list .movie .movie-poster img {
+     .movie .movie-poster img {
         display: block;
         width: 100%;
         max-width: 100%;
         height: auto;
         -webkit-transition: .3s ease;
                 transition: .3s ease; }
-    .movie-list .movie:hover img {
+    .movie:hover img {
       -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
               transform: scale(1.2); }
-    .movie-list .movie .movie-title {
+     .movie .movie-title {
+      text-align: center;
       font-size: 24px;
       font-size: 1.6em;
       font-weight: 300;
       margin-bottom: 20px; }
-      .movie-list .movie .movie-title a {
+    .movie .movie-title a {
+        font-weight: bold;
         color: #84878d;
         -webkit-transition: .3s ease;
                 transition: .3s ease; }
-        .movie-list .movie .movie-title a:hover {
+        .movie .movie-title a:hover {
           color: #ffaa3c; }
 
 .pagination {
