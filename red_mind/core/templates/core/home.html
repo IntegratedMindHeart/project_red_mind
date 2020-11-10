@@ -1,135 +1,140 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block title %}RMH - Home{% endblock title %}
 {% block content %}
 <main class="main-content">
     <div class="container">
         <h1>Recent Viewed</h2>
-        
-        <div class="page">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="slider">
-                        <ul class="slides">
-                            <li><a href="#"><img src="{% static 'core/images/1.jpg' %}" alt="Slide 1"></a></li>
-                            <li><a href="#"><img src="{% static 'core/images/2.jpg' %}" alt="Slide 2"></a></li>
-                            <li><a href="#"><img src="{% static 'core/images/3.jpg' %}" alt="Slide 3"></a></li>
-                            <li><a href="#"><img src="{% static 'core/images/4.jpg' %}" alt="Slide 3"></a></li>
-                            <li><a href="#"><img src="{% static 'core/images/5.jpg' %}" alt="Slide 3"></a></li>
-                            <li><a href="#"><img src="{% static 'core/images/6.jpg' %}" alt="Slide 3"></a></li>
-                            <li><a href="#"><img src="{% static 'core/images/7.jpg' %}" alt="Slide 3"></a></li>
-                        </ul>
+            <div class="page">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="slider">
+                            <ul class="slides">
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/1.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> Don-2</h1>
+                                        </div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/3.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> Jab Tak Hai Jaan</h1>
+                                        </div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/4.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> Brothers</h1>
+
+                                        </div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/1.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> Cocktail</h1>
+                                        </div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/5.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> HSKD</h1>
+                                        </div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/6.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> Don-2</h1>
+                                        </div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="movie">
+                                            <figure class="movie-poster"><img src="{% static 'core/images/7.jpg' %}" alt="Slide 1">
+                                            </figure>
+                                            <h1 style="text-align: center; "> Don-2</h1>
+                                        </div>
+                                    </a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-12 mb-3">
-                            <div class="latest-movie">
-                                <a href="#"><img src="{% static 'core/images/8.jpg' %}" alt="Movie 1"></a>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-12">
+                                <div class="movie">
+                                    <figure class="movie-poster"><img src="{% static 'core/images/8.jpg' %}" alt="Slide 1">
+                                    </figure>
+                                    <h3 style="text-align: center;" class="mb-1">Don-2</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12">
+                                <div class="movie">
+                                    <figure class="movie-poster"><img src="{% static 'core/images/9.jpg' %}" alt="Slide 1">
+                                    </figure>
+                                    <h3 style="text-align: center;" class="mb-1">Hamari Adhuri Kahani</h3>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12">
+                                <div class="movie">
+                                    <figure class="movie-poster"><img src="{% static 'core/images/10.jpg' %}" alt="Slide 1">
+                                    </figure>
+                                    <h3 style="text-align: center; " class="mb-1">Yeh Javani Hai Deewani</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-12">
-                            <div class="latest-movie">
-                                <a href="#"><img src="{% static 'core/images/10.jpg' %}" alt="Movie 2"></a>
-                            </div>
+                    </div>
+                </div> <!-- .row -->
+            </div>
+            <section>
+                <h1> Most Popular</h1>
+                <div class="slider-box">
+                    <amp-carousel class="carousel mb-4" height="340" layout="fixed-height" type="carousel">
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_1.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Maleficient</a></div>
                         </div>
-                        <div class="col-sm-6 col-md-12 mb-2">
-                            <div class="latest-movie">
-                                <a href="#"><img src="{% static 'core/images/9.jpg' %}" alt="Movie 2"></a>
-                            </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_2.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Tintin</a></div>
                         </div>
-                    </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_3.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Hobbit</a></div>
+                        </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_4.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Exists</a></div>
+                        </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_5.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Drive hard</a></div>
+                        </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_6.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Robocop</a></div>
+                        </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_7.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">Life of Pi</a></div>
+                        </div>
+                        <div class="movie">
+                            <figure class="movie-poster"><img src="{% static 'core/images/movie_review_8.jpg' %}" alt="#"></figure>
+                            <div class="movie-title"><a href="single.html">The Colony</a></div>
+                        </div>
+                    </amp-carousel>
                 </div>
-            </div> <!-- .row -->
-        </div>
-        <h1> Most Popular</h1>
-        <div class="slider-box">
-            <amp-carousel class="carousel" height="200" layout="fixed-height" type="carousel">
-                <a href="">
-                    <amp-img class="carousel-img" src="{% static 'core/images/11.jpg' %}" height="200" width="300" alt="Mobirise">
-
-                </a>
-                <div placeholder="">
-                    <div class="mobirise-spinner">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </div>
-
-                </amp-img>
-                <a href="">
-                    <amp-img class="carousel-img" src="{% static 'core/images/12.jpg' %}" height="200" width="300" alt="Mobirise">
-
-                </a>
-
-                <div placeholder="">
-                    <div class="mobirise-spinner">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </div>
-
-                </amp-img>
-                <a href="">
-                    <amp-img class="carousel-img" src="{% static 'core/images/13.jpg' %}" height="200" width="300" alt="Mobirise">
-                </a>
-                <div placeholder="">
-                    <div class="mobirise-spinner">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </div>
-
-                </amp-img>
-                <a href="">
-                    <amp-img class="carousel-img" src="{% static 'core/images/14.jpg' %}" height="200" width="300" alt="Mobirise">
-
-                </a>
-                <div placeholder="">
-                    <div class="mobirise-spinner">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </div>
-
-                </amp-img>
-                <a href="">
-                    <amp-img class="carousel-img" src="{% static 'core/images/15.jpg' %}" height="200" width="300" alt="Mobirise">
-
-                </a>
-
-                <div placeholder="">
-                    <div class="mobirise-spinner">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </div>
-
-                </amp-img>
-                <a href="">
-                    <amp-img class="carousel-img" src="{% static 'core/images/16.jpg' %}" height="200" width="300" alt="Mobirise">
-
-                </a>
-                <div placeholder="">
-                    <div class="mobirise-spinner">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </div>
-                </amp-img>
-            </amp-carousel>
             </section>
 
             <div class="row mt-3">
                 <div class="col-md-4">
                     <h2 class="section-title">December premiere</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
                         ut labore.</p>
                     <ul class="movie-schedule">
                         <li>
@@ -152,7 +157,8 @@
                 </div>
                 <div class="col-md-4">
                     <h2 class="section-title">November premiere</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
                         ut labore.</p>
                     <ul class="movie-schedule">
                         <li>
@@ -175,7 +181,8 @@
                 </div>
                 <div class="col-md-4">
                     <h2 class="section-title">October premiere</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
                         ut labore.</p>
                     <ul class="movie-schedule">
                         <li>
@@ -197,8 +204,7 @@
                     </ul> <!-- .movie-schedule -->
                 </div>
             </div>
-        </div>
-    </div> <!-- .container -->
+    </div>
+</div> <!-- .container -->
 </main>
-
 {% endblock content %}
