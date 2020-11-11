@@ -1513,7 +1513,7 @@ ul.arrow {
         color: #ffaa3c; }
 
 .main-content .container {
-  background: #000000b0;
+  background: #000000;
   border-radius: 5px;
   padding: 30px; }
 
@@ -1618,6 +1618,18 @@ ul.arrow {
         height: auto;
         -webkit-transition: .3s ease;
                 transition: .3s ease; }
+                .movie .movie-posters {
+                  border-radius: 5px;
+                  overflow: hidden;
+                  margin-bottom: 20px;
+                  border: 1px solid transparent; }
+                .movie .movie-posters img {
+                  display: block;
+                  width: 480px;
+                  max-width: 100%;
+                  height: 330px;
+                  -webkit-transition: .3s ease;
+                          transition: .3s ease; }
     .movie:hover img {
       -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
@@ -1628,9 +1640,17 @@ ul.arrow {
       font-size: 1.6em;
       font-weight: 300;
       margin-bottom: 20px; }
+      .movie .movie-title h1 {
+        font-weight: bold;
+        color: #141313;
+        -webkit-transition: .3s ease;
+                transition: .3s ease; }
+        .movie .movie-title a:hover {
+          color: #ffaa3c;
+      }
     .movie .movie-title a {
         font-weight: bold;
-        color: #84878d;
+        color: #ffffff;
         -webkit-transition: .3s ease;
                 transition: .3s ease; }
         .movie .movie-title a:hover {

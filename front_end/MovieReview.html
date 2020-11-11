@@ -46,7 +46,7 @@
 <body>
     <div id="site-content">
         <header class="site-header">
-            <div class="container">
+            <div class="container fixed-top" style="background-color: black;">
                 <a href="home.html" id="branding">
                     <img src="images/logo.png" alt="" class="logo">
                     <div class="logo-copy">
@@ -76,101 +76,329 @@
         </header>
         <main class="main-content">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="MovieReview.html">
-                            <div class="movie ">
-                                <figure class="movie-poster"><img src="dummy/2.jpg" alt="Slide 1">
-                                </figure>
-                                <h1 style="text-align: center; "> Don-2</h1>
-                            </div>
-                        </a>
+                <div class="page">
+                    <div class="breadcrumbs">
+                        <a href="index.html">Home</a>
+                        <a href="review.html">Movie Review</a>
+                        <span>Don-2</span>
                     </div>
-                    <div class="col-md-8">
+
+                    <div class="content">
                         <div class="row">
-                            <h1 style="color: snow;"><u>Movie Review</h1>
-                            <em>
-                                <!-- Movie Name -->
-                                <h2 style="color: snow;"><u> Movie Name:</u></h2>
-                                <p style="color: white;font-size: x-large;"> Don-2</p>
+                            <div class="col-md-6 breadcrumbs">
+                                <a href="MovieReview.html">
+                                    <div class="movie">
+                                        <figure class="movie-posters mx-5 my-2"><img src="dummy/8.jpg" alt="Slide 1">
+                                        </figure>
+                                    </div>
+                                </a>
+                                <h1 style="text-align: center; " class="mt-4"> Don-2 movie-poster</h1>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="movie-title">DON-2</h3>
+                                <div class="movie-summary">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                                        veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
 
-                                <!-- Director  -->
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+                                        quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt porro
+                                        quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit
+                                        sed.</p>
+                                </div>
+                                <ul class="movie-meta">
+                                    <li><strong>Rating:</strong>
+                                        <div class="star-rating" title="Rated 4.00 out of 5"><span
+                                                style="width:80%"><strong class="rating">4.00</strong> out of 5</span>
+                                        </div>
+                                    </li>
+                                    <li><strong>Length:</strong> 98 min</li>
+                                    <li><strong>Premiere:</strong> 22 March 2013 (USA)</li>
+                                    <li><strong>Category:</strong> Animation/Adventure/Comedy</li>
+                                </ul>
 
-                                <h2 style="color: white;"><u> Director:</u></h2>
-                                <p style="color: white;font-size: x-large;"> Karan JoharDibakar. <br>
-                                    BanerjeeZoya <br>
-                                    AkhtarAnurag Kashyap</p>
+                                <ul class="starring breadcrumbs">
+                                    <li><strong>Directors:</strong> Kirk de Mico (as Kirk DeMico). Chris Sanders</li>
+                                    <li><strong>Writers:</strong> Chris Sanders (screenplay), Kirk De Micco (screenplay)
+                                    </li>
+                                    <li><strong>Stars:</strong> Nicolas Cage, Ryan Reynolds, Emma Stone</li>
+                                    <li><strong>Stars:</strong> Nicolas Cage, Ryan Reynolds, Emma Stone</li>
 
-                                <!-- Cast     -->
+                                </ul>
+                            </div>
+                        </div> <!-- .row -->
 
-                                <h2 style="color: white;"><u> Cast:</u></h2>
-                                <p style="color: white;font-size: x-large;">RSVP Movies. <br> Flying Unicorn
-                                    Entertainment <br> Netflix</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="movie ">
+                                    <em>
+                                        <!-- Movie Name -->
+                                        <div class="movie-title">
+                                            <h4><u>Movie Name:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>Don-2</h3>
+                                            </a>
+                                        </div>
+                                        <!--  -->
+                                        <!-- Director  -->
+                                        <!--  -->
+                                        <div class="movie-title">
+                                            <h4><u>Director:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>Karan JoharDibakar. <br>
+                                                    BanerjeeZoya <br>
+                                                    AkhtarAnurag Kashyap</h3>
+                                            </a>
+                                        </div>
+                                        <!--  -->
+                                        <!-- Cast     -->
+                                        <!--  -->
+                                        <div class="movie-title">
+                                            <h4><u>Cast:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>RSVP Movies. <br> Flying Unicorn
+                                                    Entertainment <br> Netflix</h3>
+                                            </a>
+                                        </div>
+                                        <!--  -->
+                                        <!-- Rating -->
+                                        <!--  -->
+                                        <div class="movie-title">
+                                            <h4><u>Ratings:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>7.1/10:- IMDb <br>
+                                                    4/5:- Times of India <br>
+                                                    69%:- Rotten Tomatoes</h3>
+                                            </a>
+                                        </div>
+                                        <!-- Studio -->
+                                        <div class="movie-title">
+                                            <h4><u>Studio:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>Karan JoharDibakar BanerjeeZoya
+                                                    AkhtarAnurag Kashyap</h3>
+                                            </a>
+                                        </div>
+                                        <!--  -->
+                                        <!-- Storyline -->
+                                        <!--  -->
+                                        <div class="movie-title">
+                                            <h4><u>Storyline</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>Having conquered the Asian
+                                                    underworld,
+                                                    Don (Shah Rukh
+                                                    Khan) now has his sights
+                                                    set
+                                                    on
+                                                    European domination. In his way are the bosses of the existing
+                                                    European
+                                                    underworld
+                                                    and
+                                                    all law enforcement agencies. The action shifts from Kuala Lumpur to
+                                                    Berlin
+                                                    as
+                                                    Don
+                                                    must
+                                                    avoid assassination or arrest, whichever comes first, in order for
+                                                    his
+                                                    plan
+                                                    to
+                                                    succeed.
+                                                    Written by Official site</h3>
+                                            </a>
+                                        </div>
+                                        <!--  -->
+                                        <!-- Plot Summary -->
+                                        <!--  -->
+                                        <div class="movie-title">
+                                            <h4><u>Plot Summary:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>Plot Synopsis</h3>
+                                            </a>
+                                        </div>
+                                        <!--  -->
+                                        <!-- Plot Keywords  -->
+                                        <!--  -->
+                                        <div class="movie-title">
+                                            <h4><u>Plot Keywords:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>bad guy wins | surrender | bank |
+                                                    deception | scheme |
+                                                    See All (28) </h3>
+                                            </a>
+                                        </div>
 
-                                <!-- Rating -->
+                                        <!-- Taglines  -->
+                                        <div class="movie-title">
+                                            <h4><u>Taglines:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>The Return of the King See more</h3>
+                                            </a>
+                                        </div>
 
-                                <h2 style="color: white;"><u> Ratings:</u></h2>
-                                <p style="color: white;font-size: x-large;">7.1/10:- IMDb <br>
-                                    4/5:- Times of India <br>
-                                    69%:- Rotten Tomatoes
-                                </p>
+                                        <!-- Genres  -->
+                                        <div class="movie-title">
+                                            <h4><u>Genres:</u></h4>
+                                        </div>
+                                        <div class="movie-title">
+                                            <a href="">
+                                                <h3>Action | Crime | Thriller</h3>
+                                            </a>
+                                        </div>
 
-                                <!-- Studio -->
+                                    </em>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <a href=" MovieReview.html">
+                                    <div class="movie">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe width="600" height="315"
+                                                src="https://www.youtube.com/embed/_X5w-6PqoZ0" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                        <h1 style="text-align: center;"> Don-2 Trailer</h1>
+                                    </div>
+                                    <a href="MovieReview.html">
+                                        <div class="movie">
+                                            <figure class="movie-posters mx-5 my-4"><img src="dummy/8a.jpg"
+                                                    alt="Slide 1">
+                                            </figure>
+                                        </div>
+                                    </a>
+                                    <h2 class="text-center">ScreenShot 1</h2>
+                                    <a href="MovieReview.html">
+                                        <div class="movie">
+                                            <figure class="movie-posters mx-5 my-4"><img src="dummy/8b.jpg"
+                                                    alt="Slide 1">
+                                            </figure>
+                                        </div>
+                                    </a>
+                                    <h2 class="text-center">ScreenShot 2</h2>
 
-                                <h2 style="color: white;"><u> Studio (production house):</u></h2>
-                                <p style="color: white;font-size: x-large;"> Karan JoharDibakar BanerjeeZoya
-                                    AkhtarAnurag Kashyap</p>
+                                    <a href="MovieReview.html">
+                                        <div class="movie">
+                                            <figure class="movie-posters mx-5 my-4"><img src="dummy/8c.jpg"
+                                                    alt="Slide 1">
+                                            </figure>
+                                        </div>
+                                    </a>
+                                    <h2 class="text-center">ScreenShot 3</h2>
 
-                                <!-- Storyline -->
-
-                                <h2 style="color: white;"><u>Storyline:</u> </h2>
-                                <p style="color: white; font-size: x-large;"> Having conquered the Asian
-                                    underworld,
-                                    Don (Shah Rukh
-                                    Khan) now has his sights
-                                    set
-                                    on
-                                    European domination. In his way are the bosses of the existing European
-                                    underworld
-                                    and
-                                    all law enforcement agencies. The action shifts from Kuala Lumpur to Berlin
-                                    as
-                                    Don
-                                    must
-                                    avoid assassination or arrest, whichever comes first, in order for his plan
-                                    to
-                                    succeed.
-                                    Written by Official site</p>
-
-
-                                <!-- Plot Summary -->
-
-                                <h3 style="color: white;"><u>Plot Summary:</u></h3>
-                                <p style="color: white;font-size: x-large;"> Plot Synopsis</p>
-
-                                <!-- Plot Keywords  -->
-
-                                <h3 style="color: white;"><u>Plot Keywords:</u></h3>
-
-                                <p style="color: white;font-size: x-large;"> bad guy wins | surrender | bank |
-                                    deception | scheme |
-                                    See All (28) »</p>
-
-                                <!-- Taglines  -->
-
-                                <h3 style="color: white;"><u>Taglines:</u></h3>
-                                <p style="color: white;font-size: x-large;"> The Return of the King See more »
-                                </p>
-
-                                <!-- Genres  -->
-
-                                <h3 style="color: white;"><u>Genres:</u></h3>
-                                <p style="color: white;font-size: x-large;"> Action | Crime | Thriller</p>
-                            </em>
+                                </a>
+                            </div>
                         </div>
+
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac pharetra libero.
+                            Integer in suscipit diam, sit amet eleifend nunc. Curabitur egestas nunc nulla, in
+                            aliquet risus efficitur quis. Vivamus facilisis est libero, vitae iaculis nulla cursus
+                            in. Suspendisse potenti. In et fringilla ipsum, quis varius quam. Morbi eleifend
+                            venenatis diam finibus vehicula. Suspendisse eu blandit metus. Sed feugiat pellentesque
+                            turpis, in lacinia ipsum. Vivamus nec luctus orci.</p>
+                        <p>Aenean vehicula eget risus sit amet posuere. Maecenas id risus maximus, malesuada leo
+                            eget, pellentesque arcu. Phasellus vitae leo rhoncus, consectetur mauris vitae, lacinia
+                            quam. Nunc turpis erat, accumsan eget justo quis, auctor ultricies magna. Mauris
+                            sodales, risus sit amet hendrerit tincidunt, erat ante facilisis sapien, sit amet
+                            maximus neque massa a felis. Nullam consectetur justo massa, vel commodo metus gravida
+                            in. Aliquam erat volutpat. Nullam a lorem sed lorem euismod gravida a eu velit. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis ac ligula vel
+                            pharetra. Aenean vitae nulla sed dui volutpat euismod. Nam ex quam, consequat id rutrum
+                            sed, porttitor id lectus. Vestibulum venenatis consectetur justo ut sagittis. Duis
+                            dignissim tincidunt quam, nec pulvinar libero luctus nec. Morbi blandit nec lorem in
+                            ullamcorper.</p>
+                        <p>Vestibulum et odio massa. Integer at odio ipsum. Proin vitae tristique nibh. Aenean
+                            semper ante sit amet ante ultricies tincidunt. Curabitur cursus, urna non ultricies
+                            posuere, dolor lacus cursus lorem, a dapibus nibh ex eget sem. Aliquam semper sagittis
+                            sapien a fermentum. Nullam sed iaculis lacus, et imperdiet risus. Praesent quis turpis
+                            ac nunc sodales tincidunt. Aliquam at leo odio. Sed a tempor nisl, et mattis felis. Nam
+                            mauris nunc, commodo ac orci ut, auctor viverra mauris.</p>
+                        <p>Quisque nec justo vitae metus consectetur ultrices. Duis venenatis lorem massa, eu
+                            pulvinar quam faucibus sed. Nulla fringilla lorem sit amet sagittis mattis. Nunc in leo
+                            a odio mollis consectetur. Etiam ac nisl eget diam ullamcorper porta. Aliquam
+                            consectetur neque eget metus egestas sollicitudin. Curabitur ultrices urna et feugiat
+                            malesuada.</p>
+                        <p>Nulla facilisi. Fusce sed dapibus leo, eu lobortis ante. Duis luctus mauris in ante
+                            semper, ut feugiat nisi condimentum. Nullam a odio et justo suscipit tempus. Vestibulum
+                            placerat dapibus quam, a egestas turpis efficitur id. Integer suscipit placerat
+                            placerat. Phasellus in lorem quis leo egestas accumsan. Nam et euismod ligula. Duis nec
+                            erat aliquam, sollicitudin diam non, ornare leo. Pellentesque augue leo, faucibus in
+                            nunc nec, tincidunt ullamcorper tortor. Phasellus aliquam condimentum elit. Nulla
+                            facilisi. Donec magna libero, bibendum eu faucibus et, mattis at felis. Integer turpis
+                            nibh, blandit nec elit vel, euismod laoreet quam. Donec vel ante nisi. Nunc luctus a
+                            tellus non.</p>
                     </div>
-                </div> <!-- .row -->
+                </div>
+                <section>
+                    <h1> Most Recently Viewed</h1>
+                    <div class="slider-box">
+                        <amp-carousel class="carousel mb-4" height="340" layout="fixed-height" type="carousel">
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_1.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_2.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_3.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_4.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_5.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_6.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_7.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                            <div class="movie">
+                                <figure class="movie-poster"><img src="dummy/movie_review_8.jpg" alt="#">
+                                </figure>
+                                <div class="movie-title"><a href="MovieReview.html">Maleficient</a></div>
+                            </div>
+                        </amp-carousel>
+                    </div>
+                </section>
+
             </div>
+
     </div> <!-- .container -->
     </main>
     <footer class="page-footer font-small ">
