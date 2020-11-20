@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request,'core/home.html')
+
+def review(request):
+    return render(request,'core/review.html')

@@ -1,7 +1,7 @@
 {% load static %}
 <header class="site-header">
     <div class="container">
-        <a href="index.html" id="branding">
+        <a href="{% url 'home' %}" id="branding">
             <img src="{% static 'core/images/logo.png' %}" alt="logo" class="logo">
             <div class="logo-copy">
                 <h1 class="site-title">PRM</h1>
@@ -12,7 +12,8 @@
         <div class="main-navigation mt-2">
             <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
             <ul class="menu">
-                <li class="menu-item current-menu-item"><a href="#">Home</a></li>
+                <li class="menu-item current-menu-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="menu-item"><a href="{% url 'review' %}">Movie Review</a></li>
                 <li class="menu-item"><a href="#">About</a></li>
                 <li class="menu-item"><a href="#">Movie Recommendation</a></li>
                 <li class="menu-item"><a href="#">Join us</a></li>
