@@ -32,6 +32,7 @@ def get_details(api_key,title):
         for genre in genres:
             genre_list.append(genre['name'])
 
+        context['movie_id']=movie_id
         context['movie_title']=movie_title
         context['tagline']=tagline
         context['imdb_id']=imdb_id
@@ -50,9 +51,25 @@ def get_details(api_key,title):
 
     return context
 
-def get_similar_movies(movie_title):
-    r=requests.get(f'https://hollywoodrcom.herokuapp.com/api/{movie_title}')
-    return r.json()
+def get_similar_movies(movie_title,movie_id,api_key):
+    try:
+        r=requests.get(f'https://hollywoodrcom.herokuapp.com/api/{movie_title}')
+        return r.json()
+    except:
+        r=requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key={api_key}&language=en-US&page=1')
+        results=r.json()['results']
+        similar_movies=[]
+        for result in results:
+            similar_movies.append(result['title'])
+        return {'similar_movies':similar_movies}
+
+def get_movie_posters(api_key,similar_movies):
+    posters=[]
+    for movie in similar_movies:
+        r1=requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={movie}')
+        poster_path=r1.json()['results'][0]['poster_path']
+        posters.append((movie,f'https://image.tmdb.org/t/p/original{poster_path}'))
+    return {'movie_posters':posters}
 
 class HomeView(View):
     def get(self,request,*args,**kwargs):
@@ -61,5 +78,6 @@ class HomeView(View):
     def post(self,request,*args,**kwargs):
         title=request.POST.get('title')
         context=get_details(KEY,title)
-        context.update(get_similar_movies(title))
+        context.update(get_similar_movies(title,context['movie_id'],KEY))
+        context.update(get_movie_posters(KEY,context['similar_movies']))
         return render(request,'core/index.html',context)

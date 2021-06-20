@@ -9,7 +9,7 @@
 <body>
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="text" name="title">
+        <input type="text" name="title" placeholder="Enter movie name">
         <input type="submit" value="submit">
     </form>
     {% if movie_title %}
@@ -25,7 +25,13 @@
         <h1>Runtime: {{runtime}} minuts</h1>
         <h1>Status: {{status}}</h1>
         <h1>Similar Movies: {{similar_movies}}</h1>
-        <img src={{poster}}>
+        <img width="200px" src={{poster}}>
+        <hr>
+        {% for movie,poster in movie_posters %}
+            {{movie}}
+            <img width="200px" src={{poster}}>
+            <hr>
+        {% endfor %}
     {% elif sorry %}
         <h1>{{sorry}}</h1>
     {% endif %}
