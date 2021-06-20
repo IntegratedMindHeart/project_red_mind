@@ -14,6 +14,7 @@
     </form>
     {% if movie_title %}
         <h1>Title: {{movie_title}}</h1>
+        <h1>Tagline: {{tagline}}</h1>
         <h1>Overview: {{overview}}</h1>
         <h1>Rating: {{rating}}/10 ({{vote_count}} votes)</h1>
         <h1>Genres:
@@ -23,6 +24,7 @@
         <h1>Release Date: {{release_date}}</h1>
         <h1>Runtime: {{runtime}} minuts</h1>
         <h1>Status: {{status}}</h1>
+        <h1>Similar Movies: {{similar_movies}}</h1>
         <img src={{poster}}>
     {% elif sorry %}
         <h1>{{sorry}}</h1>
