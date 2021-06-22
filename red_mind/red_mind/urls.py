@@ -20,5 +20,5 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomeView.as_view(), name='home'),
-    path('/cast/<int:cast_id>', views.HomeView.as_view(), name='cast'),
+    path('cast/<int:cast_id>', views.CastView.as_view(), name='cast'),
 ]

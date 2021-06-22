@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Red Mind</title>
+</head>
+<body>
+    {% if name %}
+        <h1>Name: {{name}}</h1>
+        {% if biography %}
+            <h1>Biography: {{biography}}</h1>
+        {% endif %}
+        {% if birthday %}
+            <h1>Birthday: {{birthday}}</h1>
+        {% endif %}
+        {% if place_of_birth %}
+            <h1>Place of Birth: {{place_of_birth}}</h1>
+        {% endif %}
+        {% if deathday %}
+            <h1>Deathday: {{deathday}}</h1>
+        {% endif %}
+        {% if department %}
+            <h1>Department: {{department}}</h1>
+        {% endif %}
+        <img width="200" src="{{profile_path}}" alt="">
+    {% elif sorry %}
+        <h1>{{sorry}}</h1>
+    {% endif %}
+</body>
+</html>

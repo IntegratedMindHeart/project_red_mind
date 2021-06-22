@@ -94,6 +94,21 @@ def get_movie_posters(api_key,similar_movies):
     except:
         pass
 
+def get_individual_cast(api_key,cast_id):
+    try:
+        details={}
+        r=requests.get(f'https://api.themoviedb.org/3/person/{cast_id}?api_key={api_key}')
+        cast=r.json()
+        details['biography']=cast['biography']
+        details['birthday']=cast['birthday']
+        details['deathday']=cast['deathday']
+        details['profession']=cast['known_for_department']
+        details['name']=cast['name']
+        details['place_of_birth']=cast['place_of_birth']
+        details['profile_path']='https://image.tmdb.org/t/p/original'+cast['profile_path']
+        return details
+    except:
+        return {'sorry':'details not found'}
 class HomeView(View):
     def get(self,request,*args,**kwargs):
          return render(request,'core/index.html')
@@ -107,3 +122,7 @@ class HomeView(View):
             context.update(get_movie_posters(KEY,context['similar_movies']))
         return render(request,'core/index.html',context)
 
+class CastView(View):
+    def get(self,request,*args,**kwargs):
+        context=get_individual_cast(KEY,kwargs['cast_id'])
+        return render(request,'core/cast.html',context)
