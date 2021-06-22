@@ -6,6 +6,24 @@ import requests
 
 KEY='ff5d4bbd48363bb3f65e4c34e204d94b'
 
+def get_movie_cast(api_key,movie_id):
+    try:
+        casts=[]
+        r=requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key={api_key}')
+        for i in r.json()['cast'][:11]:
+            cast={}
+            if i['profile_path']:
+                cast['cast_id']=i['id']
+                cast['original_name']=i['original_name']
+                cast['character']=i['character']
+                cast['image']='https://image.tmdb.org/t/p/original'+i['profile_path']
+            else:
+                continue
+            casts.append(cast)
+        return casts
+    except:
+        return
+
 def get_details(api_key,title):
     context={}
     try:
@@ -27,6 +45,7 @@ def get_details(api_key,title):
         release_date=movie_details['release_date']
         runtime=movie_details['runtime']
         status=movie_details['status']
+        casts=get_movie_cast(KEY,movie_id)
         
         genre_list=[]
         for genre in genres:
@@ -45,6 +64,7 @@ def get_details(api_key,title):
         context['runtime']=runtime
         context['status']=status
         context['genre_list']=genre_list
+        context['casts']=casts
     
     except:
         context['sorry']='movie not found'
@@ -62,14 +82,17 @@ def get_similar_movies(movie_title,movie_id,api_key):
         for result in results:
             similar_movies.append(result['title'])
         return {'similar_movies':similar_movies}
-
+         
 def get_movie_posters(api_key,similar_movies):
     posters=[]
-    for movie in similar_movies:
-        r1=requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={movie}')
-        poster_path=r1.json()['results'][0]['poster_path']
-        posters.append((movie,f'https://image.tmdb.org/t/p/original{poster_path}'))
-    return {'movie_posters':posters}
+    try:
+        for movie in similar_movies:
+            r1=requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={movie}')
+            poster_path=r1.json()['results'][0]['poster_path']
+            posters.append((movie,f'https://image.tmdb.org/t/p/original{poster_path}'))
+        return {'movie_posters':posters}
+    except:
+        pass
 
 class HomeView(View):
     def get(self,request,*args,**kwargs):
@@ -78,6 +101,9 @@ class HomeView(View):
     def post(self,request,*args,**kwargs):
         title=request.POST.get('title')
         context=get_details(KEY,title)
-        context.update(get_similar_movies(title,context['movie_id'],KEY))
-        context.update(get_movie_posters(KEY,context['similar_movies']))
+        if 'movie_id' in context.keys():
+            context.update(get_similar_movies(title,context['movie_id'],KEY))
+        if 'similar_movies' in context.keys():
+            context.update(get_movie_posters(KEY,context['similar_movies']))
         return render(request,'core/index.html',context)
+
