@@ -87,8 +87,8 @@ def get_movie_posters(api_key,similar_movies):
     posters=[]
     try:
         for movie in similar_movies:
-            r1=requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={movie}')
-            poster_path=r1.json()['results'][0]['poster_path']
+            r=requests.get(f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={movie}')
+            poster_path=r.json()['results'][0]['poster_path']
             posters.append((movie,f'https://image.tmdb.org/t/p/original{poster_path}'))
         return {'movie_posters':posters}
     except:
