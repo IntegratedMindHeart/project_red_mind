@@ -24,7 +24,6 @@
         <h1>Release Date: {{release_date}}</h1>
         <h1>Runtime: {{runtime}} minuts</h1>
         <h1>Status: {{status}}</h1>
-        <h1>Similar Movies: {{similar_movies}}</h1>
         <img width="200px" src={{poster}}>
         <hr>
         <h1>Casts</h1>
@@ -34,6 +33,17 @@
             Character:{{cast.character}}
             <img width="100" src="{{cast.image}}">
             <a href="{% url 'cast' cast.cast_id %}">Details</a>
+            {% endfor %}
+        {% endif %}
+        <hr>
+        {% if reviews %}
+            <h1>Reviews</h1>
+            {% for review in reviews %}
+                <h1>{{forloop.counter}}</h1>
+                {{review.review}}
+                <b>{{review.pred}}</b>
+                <br>
+                <br>
             {% endfor %}
         {% endif %}
         <hr>

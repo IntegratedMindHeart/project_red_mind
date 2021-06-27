@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.views import View
 import requests
+import bs4 as bs
 
 # Create your views here.
 
@@ -73,7 +74,7 @@ def get_details(api_key,title):
 
 def get_similar_movies(movie_title,movie_id,api_key):
     try:
-        r=requests.get(f'https://hollywoodrcom.herokuapp.com/api/{movie_title}')
+        r=requests.get(f'https://hollywoodrcom.herokuapp.com/api/recommendation/{movie_title}')
         return r.json()
     except:
         r=requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key={api_key}&language=en-US&page=1')
@@ -109,6 +110,24 @@ def get_individual_cast(api_key,cast_id):
         return details
     except:
         return {'sorry':'details not found'}
+
+def get_sentiment(review):
+    r=requests.get(f'https://hollywoodrcom.herokuapp.com/api/review/{review}')
+    return r.json()['result']
+
+def get_reviews(imdb_id):
+    sauce=requests.get('https://www.imdb.com/title/{}/reviews?ref_=tt_ov_rt'.format(imdb_id)).text
+    soup=bs.BeautifulSoup(sauce,'lxml')
+    soup_result=soup.find_all("div",{"class":"text show-more__control"})
+    reviews=[]
+    for review in soup_result:
+        if review.string:
+            temp={}
+            temp['review']=review.string
+            temp['pred']=get_sentiment(review.string)
+            reviews.append(temp)
+    return reviews
+
 class HomeView(View):
     def get(self,request,*args,**kwargs):
          return render(request,'core/index.html')
@@ -118,6 +137,9 @@ class HomeView(View):
         context=get_details(KEY,title)
         if 'movie_id' in context.keys():
             context.update(get_similar_movies(title,context['movie_id'],KEY))
+        if 'imdb_id' in context.keys():
+            context['reviews']=get_reviews(context['imdb_id'])
+            # print(context['reviews'])
         if 'similar_movies' in context.keys():
             context.update(get_movie_posters(KEY,context['similar_movies']))
         return render(request,'core/index.html',context)
