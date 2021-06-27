@@ -4,7 +4,7 @@ from .call import KEY,get_details,get_similar_movies,get_reviews,get_movie_poste
 
 # Create your views here.
 
-class HomeView(View):
+class IndexView(View):
     def get(self,request,*args,**kwargs):
          return render(request,'core/index.html')
 
@@ -18,6 +18,10 @@ class HomeView(View):
         if 'similar_movies' in context.keys():
             context.update(get_movie_posters(KEY,context['similar_movies']))
         return render(request,'core/index.html',context)
+
+class HomeView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,'core/base.html')
 
 class CastView(View):
     def get(self,request,*args,**kwargs):
