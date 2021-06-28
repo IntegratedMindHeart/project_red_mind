@@ -21,7 +21,18 @@ class IndexView(View):
 
 class HomeView(View):
     def get(self,request,*args,**kwargs):
-        return render(request,'core/base.html')
+        return render(request,'core/home.html')
+
+    def post(self,request,*args,**kwargs):
+        title=request.POST.get('title')
+        context=get_details(KEY,title)
+        if 'movie_id' in context.keys():
+            context.update(get_similar_movies(title,context['movie_id'],KEY))
+        if 'imdb_id' in context.keys():
+            context['reviews']=get_reviews(context['imdb_id'])
+        if 'similar_movies' in context.keys():
+            context.update(get_movie_posters(KEY,context['similar_movies']))
+        return render(request,'core/home.html',context)
 
 class CastView(View):
     def get(self,request,*args,**kwargs):

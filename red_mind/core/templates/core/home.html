@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-12">
+            <p class="text-responsive text-center text-white">Enter your favorite movie and get movies recommendation
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center p-md-5">
+        <form action="{% url 'home' %}" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <div class="input-group mb-3 shadow-lg">
+                    <span class="input-group-text" id="basic-addon1">Movie</span>
+                    <input type="text" class="form-control" name="title" placeholder="enter movie name"
+                        aria-label="enter movie name" aria-describedby="basic-addon1">
+                    <button type="submit" class="btn btn-danger">Go</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% if movie_title %}
+        <div class="row text-center">
+            <div class="alert alert-danger h2" role="alert">
+                Movie Details
+            </div>
+        </div>
+        <div class="row my-3 pb-5">
+            <div class="col-md-4 col-sm-12 text-center my-2">
+                <img width="300px" class="border rounded shadow-lg" src={{poster}} alt="poster">
+            </div>
+            <div class="col-md-8 col-sm-12 my-2 trans p-3 border rounded shadow-lg text-light">
+                <p class="h1">Title: {{movie_title}}</p>
+                <p><span class="h5">Tagline: </span>{{tagline}}</p>
+                <p><span class="h5">Overview: </span>{{overview}}</p>
+                <p><span class="h5">Rating: </span>{{rating}}/10 ({{vote_count}} votes)</span>
+                <p><span class="h5">Genres: </span>
+                    {% for genre in genre_list %}
+                    {{genre}},
+                    {% endfor %}</p>
+                <p><span class="h5">Release Date: </span>{{release_date}}</p>
+                <p><span class="h5">Runtime: </span>{{runtime}} minuts</p>
+                <p><span class="h5">Status: </span>{{status}}</p>
+            </div>
+        </div>
+        {% if casts %}
+            <div class="row text-center pb-4">
+                <div class="alert alert-danger h2" role="alert">
+                    Movie Cast Details
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 pb-5">
+                {% for cast in casts %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{cast.image}}" class="card-img-top" alt="cast-img">
+                            <div class="card-body trans">
+                                <h5 class="card-title">{{cast.original_name}}</h5>
+                                <p class="card-text">({{cast.character}})</p>
+                            </div>
+                            <div class="card-footer trans">
+                                <a href="{% url 'cast' cast.cast_id %}" style="text-decoration:none">
+                                    <small>Detailed View</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if movie_posters %}
+        <h1>Similar Movies</h1>
+            {% for movie,poster in movie_posters %}
+                {{movie}}
+                <img width="200px" src={{poster}}>
+                <form action="{% url 'home' %}" method="POST">
+                    {% csrf_token %}
+                    <input hidden type="text" name="title" value={{movie}}>
+                    <input type="submit" value="view">
+                </form>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <h2>Some thing went worng</h2>
+        {% endif %}
+    {% elif sorry %}
+        <p class="trans text-responsive border rounded text-center text-light p-5">{{sorry}}</p>
+    {% endif %}
+</div>
+{% endblock content %}
