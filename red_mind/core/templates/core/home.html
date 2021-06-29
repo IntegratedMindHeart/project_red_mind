@@ -22,71 +22,96 @@
         </form>
     </div>
     {% if movie_title %}
-        <div class="row text-center">
-            <div class="alert alert-danger h2" role="alert">
-                Movie Details
-            </div>
+    <div class="row text-center">
+        <div class="alert alert-danger h2" role="alert">
+            Movie Details
         </div>
-        <div class="row my-3 pb-5">
-            <div class="col-md-4 col-sm-12 text-center my-2">
-                <img width="300px" class="border rounded shadow-lg" src={{poster}} alt="poster">
-            </div>
-            <div class="col-md-8 col-sm-12 my-2 trans p-3 border rounded shadow-lg text-light">
-                <p class="h1">Title: {{movie_title}}</p>
-                <p><span class="h5">Tagline: </span>{{tagline}}</p>
-                <p><span class="h5">Overview: </span>{{overview}}</p>
-                <p><span class="h5">Rating: </span>{{rating}}/10 ({{vote_count}} votes)</span>
-                <p><span class="h5">Genres: </span>
-                    {% for genre in genre_list %}
-                    {{genre}},
-                    {% endfor %}</p>
-                <p><span class="h5">Release Date: </span>{{release_date}}</p>
-                <p><span class="h5">Runtime: </span>{{runtime}} minuts</p>
-                <p><span class="h5">Status: </span>{{status}}</p>
-            </div>
+    </div>
+    <div class="row my-3 pb-5">
+        <div class="col-md-4 col-sm-12 text-center my-2">
+            <img width="300px" class="border rounded shadow-lg" src={{poster}} alt="poster">
         </div>
-        {% if casts %}
-            <div class="row text-center pb-4">
-                <div class="alert alert-danger h2" role="alert">
-                    Movie Cast Details
+        <div class="col-md-8 col-sm-12 my-2 trans p-3 border rounded shadow-lg text-light">
+            <p class="h1">Title: {{movie_title}}</p>
+            <p><span class="h5">Tagline: </span>{{tagline}}</p>
+            <p><span class="h5">Overview: </span>{{overview}}</p>
+            <p><span class="h5">Rating: </span>{{rating}}/10 ({{vote_count}} votes)</span>
+            <p><span class="h5">Genres: </span>
+                {% for genre in genre_list %}
+                {{genre}},
+                {% endfor %}</p>
+            <p><span class="h5">Release Date: </span>{{release_date}}</p>
+            <p><span class="h5">Runtime: </span>{{runtime}} minuts</p>
+            <p><span class="h5">Status: </span>{{status}}</p>
+        </div>
+    </div>
+    {% if casts %}
+    <div class="row text-center pb-4">
+        <div class="alert alert-danger h2" role="alert">
+            Movie Cast Details
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 pb-5">
+        {% for cast in casts %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{cast.image}}" class="card-img-top" alt="cast-img">
+                <div class="card-body trans">
+                    <h5 class="card-title">{{cast.original_name}}</h5>
+                    <p class="card-text">({{cast.character}})</p>
+                </div>
+                <div class="card-footer trans">
+                    <a href="{% url 'cast' cast.cast_id %}" style="text-decoration:none">
+                        <small>Detailed View</small>
+                    </a>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4 pb-5">
-                {% for cast in casts %}
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="{{cast.image}}" class="card-img-top" alt="cast-img">
-                            <div class="card-body trans">
-                                <h5 class="card-title">{{cast.original_name}}</h5>
-                                <p class="card-text">({{cast.character}})</p>
-                            </div>
-                            <div class="card-footer trans">
-                                <a href="{% url 'cast' cast.cast_id %}" style="text-decoration:none">
-                                    <small>Detailed View</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-        {% if movie_posters %}
-        <h1>Similar Movies</h1>
-            {% for movie,poster in movie_posters %}
-                {{movie}}
-                <img width="200px" src={{poster}}>
-                <form action="{% url 'home' %}" method="POST">
-                    {% csrf_token %}
-                    <input hidden type="text" name="title" value={{movie}}>
-                    <input type="submit" value="view">
-                </form>
-                <hr>
-            {% endfor %}
-        {% else %}
-            <h2>Some thing went worng</h2>
-        {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if reviews %}
+    <div class="row text-center">
+        <div class="alert alert-danger h2" role="alert">
+            Movie Reviews
+        </div>
+    </div>
+    <table class="table table-striped table-condensed table-bordered trans my-2">
+        <tr class="text-light">
+            <th>S.No</th>
+            <th>Review</th>
+            <th>Pred</th>
+        </tr>
+        {% for review in reviews %}
+        <tr class="text-light">
+            <td class="active">{{forloop.counter}}</td>
+            <td class="active">{{review.review}}</td>
+            {% if review.pred %}
+                <td class="active">&#x1F600;</td>
+            {% else %}
+                <td class="active">&#128530;</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {% if movie_posters %}
+    {% for movie,poster in movie_posters %}
+    <h1>Similar Movies</h1>
+    {{movie}}
+    <img width="200px" src={{poster}}>
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
+        <input hidden type="text" name="title" value={{movie}}>
+        <input type="submit" value="view">
+    </form>
+    <hr>
+    {% endfor %}
+    {% else %}
+    <h2>Some thing went worng</h2>
+    {% endif %}
     {% elif sorry %}
-        <p class="trans text-responsive border rounded text-center text-light p-5">{{sorry}}</p>
+    <p class="trans text-responsive border rounded text-center text-light p-5">{{sorry}}</p>
     {% endif %}
 </div>
 {% endblock content %}
