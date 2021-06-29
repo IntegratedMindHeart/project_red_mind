@@ -14,7 +14,7 @@
     
     {% include 'core/navbar.html' %}
 
-    <div class="container-fluid bg">
+    <div class="container-fluid {% block bg %}bg-home{% endblock bg %}">
         {% block content %}
         {% endblock content %}
     </div>

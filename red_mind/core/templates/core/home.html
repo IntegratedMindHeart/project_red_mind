@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% block title %}Home{% endblock title %}
 {% block content %}
 <div class="container">
     <div class="row pt-5">
@@ -78,7 +79,7 @@
         <tr class="text-light">
             <th>S.No</th>
             <th>Review</th>
-            <th>Pred</th>
+            <th>Sentiment</th>
         </tr>
         {% for review in reviews %}
         <tr class="text-light">
@@ -120,7 +121,13 @@
     <h2>Some thing went worng</h2>
     {% endif %}
     {% elif sorry %}
-    <p class="trans text-responsive border rounded text-center text-light p-5">{{sorry}}</p>
+    <div class="pb-5">
+        <p class="trans text-responsive border rounded text-center text-light p-5">{{sorry}}</p>
+    </div>
+    {% else %}
+    <div class="pb-5">
+        <p class="trans text-responsive border rounded text-center text-light p-5">Introduction</p>
+    </div>
     {% endif %}
 </div>
 {% endblock content %}

@@ -7,10 +7,23 @@
   background-color: rgba(225, 0, 0, 0.3);
 }
 
-.bg {
-  background-image: url("../images/background.jpg");
+.trans2{
+  background-color: #1d1d1dc9;
+}
+
+.bg-home {
+  background-image: url("../images/home-background.jpg");
   height: 100%;
   background-color: rgb(139, 33, 33);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-cast {
+  background-image: url("../images/cast-background.jpg");
+  height: 100%;
+  background-color: rgb(17, 10, 10);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
