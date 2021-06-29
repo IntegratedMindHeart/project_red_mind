@@ -24,7 +24,7 @@ class HomeView(View):
         return render(request,'core/home.html')
 
     def post(self,request,*args,**kwargs):
-        title=request.POST.get('title')
+        title=request.POST.get('title').lower()
         context=get_details(KEY,title)
         if 'movie_id' in context.keys():
             context.update(get_similar_movies(title,context['movie_id'],KEY))

@@ -5,24 +5,26 @@
 
 .trans{
   background-color: rgba(225, 0, 0, 0.3);
-  /* background-color: rgb(225, 0, 0); */
 }
 
 .bg {
-  /* The image used */
   background-image: url("../images/background.jpg");
-
-  /* Full height */
   height: 100%;
-
-  background-color: red;
-
-  /* Center and scale the image nicely */
+  background-color: rgb(139, 33, 33);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-table tr td, table tr th{
-  background-color: rgba(210,130,240, 0.3) !important;
+.card, table tr td, table tr th{
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.astext {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  color: blue;
 }
