@@ -44,3 +44,11 @@ class CastView(View):
         context['cast_active']='active'
         context['cast_disabled']='disabled'
         return render(request,'core/cast.html',context)
+
+class AboutView(View):
+    def get(self,request,*args,**kwargs):
+        context={
+            'about_active':'active',
+            'about_disabled':'disabled'
+        }
+        return render(request,'core/about.html',context)
