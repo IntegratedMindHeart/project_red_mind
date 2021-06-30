@@ -18,6 +18,7 @@ class HomeView(View):
 
     def post(self,request,*args,**kwargs):
         fm=MovieRecordForm(request.POST)
+        title=''
         if fm.is_valid():
             title=fm.cleaned_data['movie_name'].lower()
             rec=MovieRecord(movie_name=title)

@@ -16,8 +16,6 @@
                 <div class="input-group mb-3 shadow-lg">
                     <span class="input-group-text" id="{{form.movie_name.id_for_label}}">{{form.movie_name.label}}</span>
                     {{form.movie_name}}
-                    <!-- <input type="text" class="form-control" name="title" placeholder="enter movie name"
-                        aria-label="enter movie name" aria-describedby="basic-addon1"> -->
                     <button type="submit" class="btn btn-danger">Go</button>
                 </div>
             </div>
@@ -110,7 +108,7 @@
                 <div class="card-footer trans">
                     <form action="{% url 'home' %}" method="POST">
                         {% csrf_token %}
-                        <input hidden type="text" name="title" value={{movie}}>
+                        <input hidden type="text" name="movie_name" value={{movie}}>
                         <input class="astext" type="submit" value="Detailed View">
                     </form>
                 </div>
