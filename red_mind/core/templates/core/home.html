@@ -117,15 +117,35 @@
         {% endfor %}
     </div>
     {% else %}
-    <h2>Some thing went worng</h2>
+    <div class="pb-5">
+        <p class="trans text-responsive border rounded text-center text-light p-5">Some thing went worng</p>
+    </div>
     {% endif %}
-    {% elif sorry %}
+    {% else %}
+    {% if sorry %}
     <div class="pb-5">
         <p class="trans text-responsive border rounded text-center text-light p-5">{{sorry}}</p>
     </div>
-    {% else %}
+    {% endif %}
     <div class="pb-5">
-        <p class="trans text-responsive border rounded text-center text-light p-5">Introduction</p>
+        <p class="trans text-responsive border rounded text-center text-light p-4">Introduction</p>
+        <div class="row pt-2 text-white text-center">
+            <div class="col-12 col-md-4 pb-2">
+                <div class="border rounded p-4 shadow trans">
+                    <div class="pt-3 pb-4">Stories make us feel old emotions and new perspectives, bringing our loved ones together. We give you this choice to tailor your viewing experience based on your preferences.</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 pb-2">
+                <div class="border rounded p-4 shadow trans">
+                    <div class="py-2">Welcome to PRM! Your guide to finding your next watchlist. Whatever your taste, and no matter where you live, we will give you the best recommendation based on your mood and preferences.</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 pb-2">
+                <div class="border rounded p-4 shadow trans">
+                    <div class="py-2">Our browsable database includes movies - with their cast, biographies, and review. That will help you find the best movie to watch next while interacting and giving your opinion to a large community of users.</div>
+                </div>
+            </div>
+        </div>
     </div>
     {% endif %}
 </div>
