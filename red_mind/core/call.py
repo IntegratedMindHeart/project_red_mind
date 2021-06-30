@@ -119,7 +119,10 @@ def get_reviews(imdb_id):
     for review in soup_result:
         if review.string:
             temp={}
-            temp['review']=review.string
-            temp['pred']=get_sentiment(review.string)
+            try:
+                temp['pred']=get_sentiment(review.string)
+                temp['review']=review.string
+            except:
+                continue
             reviews.append(temp)
     return reviews
