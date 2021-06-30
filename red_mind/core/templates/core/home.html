@@ -14,9 +14,10 @@
             {% csrf_token %}
             <div class="input-group">
                 <div class="input-group mb-3 shadow-lg">
-                    <span class="input-group-text" id="basic-addon1">Movie</span>
-                    <input type="text" class="form-control" name="title" placeholder="enter movie name"
-                        aria-label="enter movie name" aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="{{form.movie_name.id_for_label}}">{{form.movie_name.label}}</span>
+                    {{form.movie_name}}
+                    <!-- <input type="text" class="form-control" name="title" placeholder="enter movie name"
+                        aria-label="enter movie name" aria-describedby="basic-addon1"> -->
                     <button type="submit" class="btn btn-danger">Go</button>
                 </div>
             </div>
