@@ -1,4 +1,4 @@
-# project_red_mind
+# Project Red Mind
 We have created Django based website to get information about any movie and it also provides the movie recommendation service with review sentiment analysis.
 
 ## See Project
