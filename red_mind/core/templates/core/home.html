@@ -82,12 +82,12 @@
         </tr>
         {% for review in reviews %}
         <tr class="text-light">
-            <td class="active">{{forloop.counter}}</td>
+            <th class="active">{{forloop.counter}}</th>
             <td class="active">{{review.review}}</td>
             {% if review.pred %}
-            <td class="active">&#x1F600;</td>
+            <td class="active"><i class="fas fa-thumbs-up"></i> (Good)</td>
             {% else %}
-            <td class="active">&#128530;</td>
+            <td class="active"><i class="fas fa-thumbs-down"></i> (Bad)</td>
             {% endif %}
         </tr>
         {% endfor %}
