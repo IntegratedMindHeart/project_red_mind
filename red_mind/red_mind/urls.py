@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from core import views
 
+admin.site.site_header = 'Project Red Mind Administration'
+admin.site.index_title = 'Site Database Details'
+admin.site.site_title = 'Project Red Mind Site Admin'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomeView.as_view(), name='home'),
