@@ -1,0 +1,1 @@
+web: waitress-serve --port=$PORT red_mind.wsgi:application

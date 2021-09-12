@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Cast{% endblock title %}
+{% block bg %}bg-cast{% endblock bg %}
+{% block content %}
+<div class="container pt-5 pb-2">
+    <div class="row text-center mt-2">
+        <div class="alert alert-secondary h2" role="alert">
+            Cast Details
+        </div>
+    </div>
+    {% if name %}
+    <div class="row my-3 pb-5">
+        <div class="col-md-4 col-sm-12 text-center my-2">
+            <img width="300px" class="border rounded shadow-lg" src={{profile_path}} alt="profile">
+        </div>
+        <div class="col-md-8 col-sm-12 my-2 trans2 p-3 border rounded shadow-lg text-light">
+            <p class="h3">Name: {{name}}</p>
+            {% if biography %}
+                <p><span class="h5">Biography: </span>{{biography}}</p>
+            {% endif %}
+            {% if birthday %}
+                <p><span class="h5">Birthday: </span>{{birthday}}</p>
+            {% endif %}
+            {% if place_of_birth %}
+                <p><span class="h5">Place of Birth: </span>{{place_of_birth}}</p>
+            {% endif %}
+            {% if deathday %}
+                <p><span class="h5">Deathday: </span>{{deathday}}</p>
+            {% endif %}
+            {% if profession %}
+                <p><span class="h5">Profession: </span>{{profession}}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+        <div class="pb-5">
+            <p class="trans2 text-responsive border rounded text-center text-light p-5">Introduction</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}
